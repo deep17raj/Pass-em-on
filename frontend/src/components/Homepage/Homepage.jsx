@@ -17,6 +17,7 @@ const HomePage = () => {
         </div>
         <div className="flex gap-8 mb-20">
           <div className="text-[#552734] text-[20px]"><a href="/upload">Upload Notes</a></div>
+          <div className="text-[#552734] text-[20px]"><a href="/dashboard">Dashboard</a></div>
           <div className="text-[#552734] text-[20px]"><a href="/about">About Us</a></div>
           <div
             className="text-[#552734] text-[25px] border border-[#552734] px-2 "
@@ -77,18 +78,18 @@ const HomePage = () => {
             className="w-[272px] h-[214px] bg-[#B1C5DE]"
             style={({ backgroundColor: "#B1C5DE" }, { borderRadius: "20px" })}
           >
-            <a href="/upload"><img src={lendAndEarn} alt="Lend & Earn" /></a>
+            <a href="/upload"><img src={lendAndEarn} alt="Lend & Learn" /></a>
             
           </div>
           <div
             className="w-[272px] h-[214px] bg-[#B1C5DE] ml-10"
             style={({ backgroundColor: "#B1C5DE" }, { borderRadius: "20px" })}
           >
-            <img
+            <a href="/library"><img
               src={studyAndSucceed}
               alt="Study & Succeed"
               className="w-[233px] h-[185px]"
-            />
+            /></a>
           </div>
         </div>
         <div className="  flex gap-[290px] pl-12 w-full">

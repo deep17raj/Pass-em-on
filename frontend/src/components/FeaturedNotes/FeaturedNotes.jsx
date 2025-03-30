@@ -1,10 +1,8 @@
 "use client";
 import React from "react";
 import CourseCard from "./CourseCard";
-import CourseCardWithSideSlot from "./CourseCardWithSideSlot";
-import DifferentialEquationsCard from "./DifferentialEquationsCard";
 
-function FeaturedNotes() {
+function NotesLibrary() {
   return (
     <section className=" mt-5 flex flex-col rounded-none">
       <header className="flex flex-wrap gap-5 justify-between w-full font-bold max-w-[1298px] text-stone-700 max-md:max-w-full">
@@ -80,4 +78,4 @@ function FeaturedNotes() {
   );
 }
 
-export default FeaturedNotes;
+export default NotesLibrary;

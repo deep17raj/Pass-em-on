@@ -1,7 +1,6 @@
 import React from 'react'
 
 
-
 export default function Login() {
   return (
     <div className='grid grid-cols-1 sm:grid-cols-1 h-screen w-full'>
@@ -37,3 +36,4 @@ export default function Login() {
     </div>
   )
 }
+

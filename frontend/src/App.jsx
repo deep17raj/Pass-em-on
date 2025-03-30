@@ -11,6 +11,7 @@ import OtherProfile from "./components/OtherProfile/OtherProfile";
 import UploadNotes from "./components/Notesupload/UploadNotes";
 import CourseNotesPage from "./components/RequestNotes/CourseNotesPage";
 import AboutPage from "./components/AboutUs/AboutPage";
+import NotesLibrary from "./components/NotesLibrary/NotesLibrary";
 
 function App() {
   const router = createBrowserRouter([
@@ -49,6 +50,10 @@ function App() {
     {
       path: "/about",
       element:<AboutPage/>,
+    },
+    {
+      path: "/library",
+      element:<NotesLibrary/>,
     },
   ]);
 

@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 
 function AboutPage() {
   return (
-    <div className="relative w-full bg-s[#E4EAF7] min-h-screen">
+    <div className="bg-[#E4EAF7] relative w-full bg-s[#E4EAF7] min-h-screen">
       <Header />
       <AboutContent />
       <Footer />

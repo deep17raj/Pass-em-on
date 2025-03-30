@@ -2,12 +2,12 @@ import React from "react";
 
 function AboutContent() {
   return (
-    <main className="px-20 py-10 max-md:px-10 max-sm:px-5">
+    <main className="px-20 bg-[#E4EAF7] py-10 max-md:px-10 max-sm:px-5">
       <section>
-        <h1 className="mb-5 text-5xl font-bold text-stone-700 max-sm:text-4xl">
+        <h1 className="mb-5 text-5xl font-bold text-[#552734] max-sm:text-4xl">
           About Us
         </h1>
-        <p className="mb-10 text-2xl text-black max-sm:text-xl">
+        <p className="mb-10 text-2xl text-stone-700] max-sm:text-xl">
           Pass 'em On is a notes renting platform which resolves a key issue
           that we as students of VIT face which is getting hold of good notes
           which help us prepare for our exams. Considering that one doesn't have
@@ -25,10 +25,10 @@ function AboutContent() {
       </section>
 
       <section>
-        <h2 className="mb-5 text-5xl font-bold text-stone-700 max-sm:text-4xl">
+        <h2 className="mb-5 text-5xl font-bold text-[#552734] max-sm:text-4xl">
           What Drives Us
         </h2>
-        <p className="mb-10 text-2xl text-black max-sm:text-xl">
+        <p className="mb-10 text-2xl text-stone-700] max-sm:text-xl">
           We envision a collaborative academic community which reduces the
           academic burden on VIT students. Our goal is to make learning more
           accessible by eliminating the barriers to quality study material,
@@ -41,10 +41,10 @@ function AboutContent() {
       </section>
 
       <section>
-        <h2 className="mb-5 text-5xl font-bold text-stone-700 max-sm:text-4xl">
+        <h2 className="mb-5 text-5xl font-bold text-[#552734] max-sm:text-4xl">
           Guiding Pillars
         </h2>
-        <p className="mb-10 text-2xl text-black max-sm:text-xl">
+        <p className="mb-10 text-2xl text-stone-700 max-sm:text-xl">
           Accessibility: High-quality study materials should be available to
           all, without financial constraints. Reliability: Our notes are
           verified to ensure accuracy and relevance, so students can trust what
