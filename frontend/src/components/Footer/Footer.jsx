@@ -14,7 +14,7 @@ function Footer() {
               The place where every VIT student will land at 
             <div>least once</div>
             </p>
-            <div className="flex gap-5 ml-11 max-md:ml-2.5">
+            <div className="flex gap-5 ">
               <a href="#" aria-label="Social media link">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/926fed44af122d6a63a9667b708743b52144522f?placeholderIfAbsent=true&apiKey=f36dbad0df324b599f480ca6227d92f4"
