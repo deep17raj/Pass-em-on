@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../assests/logo.svg";
 
 function Footer() {
   return (
@@ -7,10 +8,11 @@ function Footer() {
         <div className="w-[57%] max-md:ml-0 max-md:w-full">
           <div className="flex flex-col items-start w-full max-md:mt-10 max-md:max-w-full">
             <h2 className="text-5xl font-medium text-slate-300 max-md:text-4xl">
-              Pass 'em On
+             <a href="/">Pass 'em On</a> 
             </h2>
             <p className="self-stretch text-2xl font-medium text-slate-300 max-md:max-w-full">
-              The place where every VIT student will land at least once
+              The place where every VIT student will land at 
+            <div>least once</div>
             </p>
             <div className="flex gap-5 ml-11 max-md:ml-2.5">
               <a href="#" aria-label="Social media link">
@@ -45,7 +47,7 @@ function Footer() {
                       <a href="#">Notes Library</a>
                     </li>
                     <li>
-                      <a href="#">Upload Notes</a>
+                      <a href="/upload">Upload Notes</a>
                     </li>
                     <li>
                       <a href="#">Developers</a>

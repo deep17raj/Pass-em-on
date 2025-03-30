@@ -8,7 +8,7 @@ const CourseCardWithSideSlot = ({
   mainSlots = [],
   sideSlot,
   uploadedBy,
-  bgColor = "bg-gray-500",
+  bgColor = "#6B7387",
   textColor = "text-stone-300",
   uploaderTextColor = "text-gray-400",
 }) => {

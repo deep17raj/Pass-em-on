@@ -3,7 +3,7 @@ import React from "react";
 
 const SearchBar = () => {
   return (
-    <div className="relative flex-1 mx-auto max-w-[638px]">
+    <div className="relative flex-1 mx-auto max-w-[638px] mb-20">
       <div className="flex items-center px-6 w-full bg-gray-400 rounded-3xl h-[39px]">
         <input
           type="text"
