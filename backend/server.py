@@ -43,9 +43,20 @@ def callback():
     
     session["google_id"] = id_info.get("sub")
     session["name"] = id_info.get("name")
-    return {"logged_in": 1, 
+
+    mydb = mysql.connector.connect(host=db_cred.cred["host"], user=db_cred.cred["un"], password=db_cred.cred["pwd"], database=db_cred.cred["db"])
+    cursor = mydb.cursor()
+    query = "SELECT UID FROM USERS WHERE EMAIL='{}'".format(id_info.get("email"))
+    cursor.execute(query)
+    cursor.fetchall
+    if (cursor.rowcount == 0):
+        query = "INSERT INTO USERS (name, email, rating) VALUES '{}', '{}', {}".format(id_info.get("name"), id_info.get("email"), 5.0)
+        cursor.execute(query)
+    mydb.close()
+
+    return {"logged_in": True, 
             "google_id": session["google_id"], 
-            "name": session["name"],
+            "name": id_info.get("name"),
             "gmail_id": id_info.get("email")
             }
 
@@ -65,7 +76,7 @@ def upload_image():
         link = data["data"]["link"]
         mydb = mysql.connector.connect(host=db_cred.cred["host"], user=db_cred.cred["un"], password=db_cred.cred["pwd"], database=db_cred.cred["db"])
         cursor = mydb.cursor()
-        query = "INSERT INTO NOTES VALUES {}, {}, {}, {}".format(uid, course, slot, link)
+        query = "INSERT INTO NOTES VALUES {}, '{}', '{}', '{}'".format(uid, course, slot, link)
         cursor.execute(query)
         mydb.close()
         return {data}
@@ -75,7 +86,7 @@ def upload_image():
 @app.route("/search_page")
 def search_page():
     search = request.args.get("q")
-    query = "SELECT * FROM NOTES WHERE course_code={}".format(search)
+    query = "SELECT * FROM NOTES WHERE course_code='{}'".format(search)
     mydb = mysql.connector.connect(host=db_cred.cred["host"], user=db_cred.cred["un"], password=db_cred.cred["pwd"], database=db_cred.cred["db"])
     cursor = mydb.cursor()
     cursor.execute(query)
