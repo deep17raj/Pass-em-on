@@ -5,7 +5,7 @@ import SlotButton from "./SlotButton";
 const DifferentialEquationsCard = () => {
   return (
     <section className="flex grow text-xl font-bold max-md:mt-10">
-      <article className="flex flex-col items-start pt-7 pb-24 pl-5 rounded-3xl bg-stone-300">
+      <article className="flex flex-col items-start pt-7 pb-24 pl-5 rounded-3xl bg-[#1C3657]">
         <header className="mr-0 text-2xl text-stone-700">
           Differential Equations
           <br />

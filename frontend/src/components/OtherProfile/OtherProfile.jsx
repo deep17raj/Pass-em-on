@@ -1,11 +1,11 @@
 "use client";
 import * as React from "react";
 import Header from "../Header/Header";
-import ProfileInfo from "./ProfileInfo";
-import NotesList from "../NotesInfo/NoteList";
+import ProfileInfo from "../Profile/ProfileInfo";
+import NotesList from "./NoteList";
 import Footer from "../Footer/Footer";
 
-function MyProfile() {
+function OtherProfile() {
   return (
     <main className="overflow-hidden pt-4 bg-[#E4EAF7]">
       <div className="flex flex-col px-4 w-full max-md:max-w-full">
@@ -18,4 +18,4 @@ function MyProfile() {
   );
 }
 
-export default MyProfile;
+export default OtherProfile;

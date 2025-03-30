@@ -1,5 +1,5 @@
 import React from "react";
-import NoteCard from "./NoteCard";
+import NoteCard from "../NotesInfo/NoteCard";
 
 function NotesList() {
   // Sample data for the note cards
@@ -33,14 +33,11 @@ function NotesList() {
   return (
     <section>
       <header className="flex flex-wrap gap-5 justify-between self-center mt-11 w-full font-bold max-w-[1222px] text-stone-700 max-md:mt-10 max-md:max-w-full">
-        <h2 className="text-5xl max-md:text-4xl text-[#552734] ml-12">My Notes</h2>
-        <a href="#" className="text-[#552734] self-start mt-5 text-2xl mr-33">
-          Edit &gt;
-        </a>
+        <h2 className="text-5xl max-md:text-4xl ml-12 text-[#552734]">Available Notes</h2>
       </header>
 
       <div className="self-center mt-7 w-full max-w-[1100px] max-md:max-w-full">
-        <div className="flex gap-12 max-md:flex-col">
+        <div className="flex gap-5 max-md:flex-col">
           {notes.map((note) => (
             <NoteCard
               key={note.id}

@@ -1,27 +1,28 @@
 import React from "react";
 import hero from "../../assests/hero2.png";
-import search from "../../assests/search.jpg";
 import searchLogo from "../../assests/logo.png";
 import lendAndEarn from "../../assests/lal.png";
 import studyAndSucceed from "../../assests/sas.png";
 import Footer from "../Footer/Footer";
 import FeaturedNotes from "../FeaturedNotes/FeaturedNotes";
+import logo from "../../assests/logo.svg";
 
 const HomePage = () => {
   return (
+    <div style={{ backgroundColor: "#E4EAF7" }}>
     <div className="px-8 py-5" style={{ backgroundColor: "#E4EAF7" }}>
       <nav className="flex  justify-between items-center  ">
         <div className="text-[#552734] text-[25px] font-medium">
-          Pass ‘em On
+          <a href="/"><img src={logo} alt="logo"  height={20}/></a>
         </div>
-        <div className="flex gap-8">
-          <div className="text-[#552734] text-[20px]">Upload Notes</div>
-          <div className="text-[#552734] text-[20px]">About Us</div>
+        <div className="flex gap-8 mb-20">
+          <div className="text-[#552734] text-[20px]"><a href="/upload">Upload Notes</a></div>
+          <div className="text-[#552734] text-[20px]"><a href="/about">About Us</a></div>
           <div
             className="text-[#552734] text-[25px] border border-[#552734] px-2 "
             style={{ borderRadius: "15px" }}
           >
-            Login
+           <a href="/login">Login</a> 
           </div>
         </div>
       </nav>
@@ -36,7 +37,7 @@ const HomePage = () => {
           </p>
           <div className="bg-[#E4EAF7] mt-5">
       <form >
-        <div className="">
+        <div id="search" className="">
           <input
             type="text"
             name="q"
@@ -69,14 +70,15 @@ const HomePage = () => {
             className="w-[272px] h-[214px] bg-[#B1C5DE] "
             style={({ backgroundColor: "#B1C5DE" }, { borderRadius: "20px" })}
           >
-            <img src={searchLogo} alt="Search & Borrow" className="" />
+            <a href="#search"><img src={searchLogo} alt="Search & Borrow" className="" /></a>
           </div>
 
           <div
             className="w-[272px] h-[214px] bg-[#B1C5DE]"
             style={({ backgroundColor: "#B1C5DE" }, { borderRadius: "20px" })}
           >
-            <img src={lendAndEarn} alt="Lend & Earn" />
+            <a href="/upload"><img src={lendAndEarn} alt="Lend & Earn" /></a>
+            
           </div>
           <div
             className="w-[272px] h-[214px] bg-[#B1C5DE] ml-10"
@@ -102,7 +104,11 @@ const HomePage = () => {
         </div>
       </section>
       <FeaturedNotes/>
+      
+        </div>
+      <div>
       <Footer/>
+      </div>
     </div>
   );
 };

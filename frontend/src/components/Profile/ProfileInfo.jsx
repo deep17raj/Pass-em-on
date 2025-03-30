@@ -13,8 +13,9 @@ function ProfileInfo() {
             />
           </figure>
         </div>
-        <div className="ml-5 w-[61%] max-md:ml-0 max-md:w-full">
+        <div className="ml-5 w-[61%] max-md:ml-0 max-md:w-full mt-10">
           <div className="flex flex-col self-stretch my-auto text-2xl font-medium text-[#552734] max-md:mt-10">
+            <h2 className="font-bold text-[24px]">John Doe</h2>
             <p>johndoe.2024@vitstudent.ac.in</p>
             <p className="self-start">Rating - 4.5</p>
           </div>
