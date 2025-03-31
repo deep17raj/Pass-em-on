@@ -1,6 +1,6 @@
 import React from "react";
 
-function NoteCard({ courseName, courseCode, slots, uploader, cardIndex }) {
+function NoteCard({ courseName, courseCode, slots, uploader, cardIndex,school }) {
   const bgColor = cardIndex % 2 === 0 ? "bg-[#1C3657]" : "bg-[#4A5568]";
 
   return (
@@ -24,6 +24,7 @@ function NoteCard({ courseName, courseCode, slots, uploader, cardIndex }) {
             </span>
           ))}
         </div>
+        <h5 className="self-start mt-10">School: {school}</h5>
 
         <footer className="self-end mt-16 text-gray-400 max-md:mt-10">
           Uploaded by {uploader}

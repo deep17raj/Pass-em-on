@@ -10,7 +10,8 @@ function NotesList() {
       courseCode: "BPYH101L",
       slots: ["A1", "B2", "D2"],
       uploader: "John Doe",
-      cardIndex:1
+      cardIndex:1,
+      school:"SCORE"
     },
     {
       id: 2,
@@ -18,7 +19,8 @@ function NotesList() {
       courseCode: "BPYH101L",
       slots: ["A1", "B2", "D2"],
       uploader: "John Doe",
-      cardIndex:2
+      cardIndex:2,
+      school:"SITE"
     },
     {
       id: 3,
@@ -26,7 +28,8 @@ function NotesList() {
       courseCode: "BPYH101L",
       slots: ["A1", "B2", "D2"],
       uploader: "John Doe",
-      cardIndex:3
+      cardIndex:3,
+      school:"SCOPE"
     },
   ];
 
@@ -49,6 +52,7 @@ function NotesList() {
               slots={note.slots}
               uploader={note.uploader}
               cardIndex={note.cardIndex}
+              school = {note.school}
             />
           ))}
         </div>
