@@ -62,7 +62,11 @@ def callback():
 
 @app.route('/upload', methods=['POST'])
 def upload_image():
-    uid = ""
+    mydb = mysql.connector.connect(host=db_cred.cred["host"], user=db_cred.cred["un"], password=db_cred.cred["pwd"], database=db_cred.cred["db"])
+    cursor = mydb.cursor()
+    cursor.execute("SELECT UID FROM USERS WHERE name='{}'".format(session['name']))
+    uid = cursor.fetchone()[0]
+    mydb.close()
     course = request.form['course_code']
     slot = request.form['slot']
     image = request.files['image']
@@ -86,9 +90,22 @@ def upload_image():
 @app.route("/search_page")
 def search_page():
     search = request.args.get("q")
-    query = "SELECT * FROM NOTES WHERE course_code='{}'".format(search)
     mydb = mysql.connector.connect(host=db_cred.cred["host"], user=db_cred.cred["un"], password=db_cred.cred["pwd"], database=db_cred.cred["db"])
+    query = "SELECT * FROM NOTES WHERE course_code='{}'".format(search)
     cursor = mydb.cursor()
     cursor.execute(query)
+    rec = cursor.fetchall()
+    data = {'count': cursor.rowcount}
+    temp = {}
+    cnt = 1
+    for i in rec:
+        temp['uid'] = i[0]
+        temp['course_code'] = i[1]
+        temp['slot'] = i[2]
+        temp['img_link'] = i[3]
+
+        data['mem'+str(cnt)] = temp
+        cnt+=1
+
     mydb.close()
-    return ""
+    return data
