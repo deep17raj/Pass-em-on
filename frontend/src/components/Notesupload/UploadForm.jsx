@@ -20,9 +20,10 @@ const UploadForm = () => {
   const handleChangeSchool = (event) => {
     setsName(event.target.value);
   };
-  const handleChildData = (data) => {
-    setSlot(data);
+  const handleSlot = (event) => {
+    setSlot(event.target.value);
   };
+  
   const handleUpload = async () => {
     if (!cCode || !slot || !file) {
       alert("Please fill all fields and select an image.");
@@ -82,8 +83,15 @@ const UploadForm = () => {
           className="px-7 py-5 mt-20 bg-gray-400 placeholder-[#373737]  rounded-3xl max-md:px-5 max-md:mt-10 max-md:max-w-full"
         />
 
-        <SlotSelection  sendDataToParent={handleChildData} />
-
+        <SlotSelection   />
+        <input
+          type="text"
+          name="slot"
+          value={slot}
+          onChange={handleSlot}
+          placeholder="Enter slot "
+          className="px-7 py-5 mt-20 bg-gray-400 placeholder-[#373737]  rounded-3xl max-md:px-5 max-md:mt-10 max-md:max-w-full"
+        />
         <div className="flex flex-col self-center max-w-full text-2xl text-gray-500 w-[689px] mt-20 max-md:mt-10">
           
 
