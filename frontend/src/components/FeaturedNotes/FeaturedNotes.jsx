@@ -10,7 +10,7 @@ function NotesLibrary() {
           Featured Notes
         </h1>
         <a href="#" className="self-end mt-9 text-2xl text-[#552734]">
-          More &gt;
+          <a href="/library">More &gt;</a>
         </a>
       </header>
 
