@@ -52,6 +52,7 @@ def callback():
     if (cursor.rowcount == 0):
         query = "INSERT INTO USERS (name, email, rating) VALUES '{}', '{}', {}".format(id_info.get("name"), id_info.get("email"), 5.0)
         cursor.execute(query)
+        mydb.commit()
     mydb.close()
 
     return {"logged_in": True, 
@@ -82,6 +83,7 @@ def upload_image():
         cursor = mydb.cursor()
         query = "INSERT INTO NOTES VALUES {}, '{}', '{}', '{}'".format(uid, course, slot, link)
         cursor.execute(query)
+        mydb.commit()
         mydb.close()
         return {data}
     else:
