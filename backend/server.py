@@ -63,11 +63,11 @@ def callback():
 
 @app.route('/upload', methods=['POST'])
 def upload_image():
-    mydb = mysql.connector.connect(host=db_cred.cred["host"], user=db_cred.cred["un"], password=db_cred.cred["pwd"], database=db_cred.cred["db"])
-    cursor = mydb.cursor()
-    cursor.execute("SELECT UID FROM USERS WHERE name='{}'".format(session['name']))
-    uid = cursor.fetchone()[0]
-    mydb.close()
+    # mydb = mysql.connector.connect(host=db_cred.cred["host"], user=db_cred.cred["un"], password=db_cred.cred["pwd"], database=db_cred.cred["db"])
+    # cursor = mydb.cursor()
+    # cursor.execute("SELECT UID FROM USERS WHERE name='{}'".format(session['name']))
+    # uid = cursor.fetchone()[0]
+    # mydb.close()
     course = request.form['course_code']
     slot = request.form['slot']
     image = request.files['image']
@@ -81,7 +81,7 @@ def upload_image():
         link = data["data"]["link"]
         mydb = mysql.connector.connect(host=db_cred.cred["host"], user=db_cred.cred["un"], password=db_cred.cred["pwd"], database=db_cred.cred["db"])
         cursor = mydb.cursor()
-        query = "INSERT INTO NOTES VALUES {}, '{}', '{}', '{}'".format(uid, course, slot, link)
+        query = "INSERT INTO NOTES VALUES {}, '{}', '{}', '{}'".format(1, course, slot, link)
         cursor.execute(query)
         mydb.commit()
         mydb.close()
