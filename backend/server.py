@@ -8,15 +8,16 @@ from google_auth_oauthlib.flow import Flow
 from pip._vendor import cachecontrol
 
 app = Flask("PassEmOn")
-app.secret_key = "secret"
+app.secret_key = "SECRET"
 
 CORS(app)
 
-IMGUR_UPLOAD_URL = 'https://api.imgur.com/3/image'
-CLIENT_ID = 'de0ac7ad6efd1aa'
-GOOGLE_CLIENT_ID = "436039800268-su7b5libe8shn70vuv19co49glgdvmog.apps.googleusercontent.com"
+os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 
-# Fix path issue
+IMGUR_UPLOAD_URL = 'https://api.imgur.com/3/image'
+CLIENT_ID = 'IMGUR_CLIENT_ID'
+GOOGLE_CLIENT_ID = "GOOGLE_CLIENT_ID"
+
 client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "client_secret.json")
 
 flow = Flow.from_client_secrets_file(
@@ -27,7 +28,6 @@ flow = Flow.from_client_secrets_file(
 )
 
 
-GOOGLE_CLIENT_ID = "436039800268-su7b5libe8shn70vuv19co49glgdvmog.apps.googleusercontent.com"
 client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "client_secret.json") #get the path to the client secret file
 flow = Flow.from_client_secrets_file(
     client_secrets_file=client_secrets_file, 
@@ -69,11 +69,12 @@ def callback():
         mydb.commit()
     mydb.close()
 
-    return {"logged_in": True, 
-            "google_id": session["google_id"], 
-            "name": id_info.get("name"),
-            "gmail_id": id_info.get("email")
-            }
+    return redirect("http://localhost:5173/dashboard")
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect("http://localhost:5173/")
 
 @app.route('/upload', methods=['POST'])
 def upload_image():

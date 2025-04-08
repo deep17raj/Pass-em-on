@@ -23,7 +23,7 @@ const HomePage = () => {
             className="text-[#552734] text-[25px] border border-[#552734] px-2 "
             style={{ borderRadius: "15px" }}
           >
-           <a href="/login">Login</a> 
+           <a href="http://localhost:5000/login">Login</a> 
           </div>
         </div>
       </nav>
